@@ -1,0 +1,18 @@
+
+Todo:
+  ☐ Setup project
+  ☐ deploy function
+  ☐ Configure on Actions on Google console
+  ☐ Link to the Google Assistant
+    ☐ update sync response
+  ☐ look at the database structure & try out on website
+  ☐ Implement EXECUTE
+  ☐ Query washer
+  ☐ Add modes: large/small
+    ☐ update onSync
+    ☐ update on Execute
+    ☐ update queryFirebase and queryDevice
+  ☐ Add toggle
+    ☐ update on sync
+    ☐ update on execute
+    ☐ update query
