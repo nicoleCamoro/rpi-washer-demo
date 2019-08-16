@@ -52,6 +52,7 @@ def check_connection():
         return False
     
 def toggle_lights(firebase_response={}):
+    print(firebase_response)
     
     if not firebase_response:
         return False
@@ -59,11 +60,13 @@ def toggle_lights(firebase_response={}):
     # Turn on washer
     if firebase_response['OnOff']['on']:
         PURPLE.on()
-        if firebase_response['RunCycle']['dummy']:
+        if firebase_response['StartStop']['isRunning'] and not firebase_response['StartStop']['isPaused']: 
             YELLOW.on()
-            sleep(0.1)
+            sleep(0.3)
             YELLOW.off()
-            sleep(0.1)
+            sleep(0.3)
+        elif firebase_response['StartStop']['isPaused']:
+            YELLOW.on()
         else:
             YELLOW.off()
         
@@ -75,15 +78,7 @@ def toggle_lights(firebase_response={}):
 
     else:
         PURPLE.off()
+        YELLOW.off()
+        RED.off()
+    
 
-    
-    
-    
-        
-    
-    # Run washer
-    #if firebase_response['RunCycle']['dummy']:
-#        YELLOW.on()
-#    else:
-#        YELLOW.off()
-    
